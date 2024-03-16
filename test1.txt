@@ -1,2 +1,2 @@
-create a test.txt file
+create a test.txt
 iam sasi
