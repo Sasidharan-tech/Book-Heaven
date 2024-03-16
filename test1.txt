@@ -1,2 +1,0 @@
-create a test.txt
-iam sasi
