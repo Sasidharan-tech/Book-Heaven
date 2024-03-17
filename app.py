@@ -32,7 +32,6 @@ def create_users_table():
     conn.commit()
     conn.close()
 
-
 create_users_table()
 
 
@@ -50,9 +49,6 @@ def generate_token(username):
 def index_page():
     return render_template('index.html')
 
-# @app.route('index')
-
-
 @app.route('/registerpage')
 def register_page():
     return render_template('register.html')
@@ -62,7 +58,7 @@ def register_page():
 def register():
     if request.method == 'POST':
         username = request.form['username']
-        password = hash_password(request.form['password'])  # Hash  password
+        password = hash_password(request.form['password'])  
         conn = psycopg2.connect(
             dbname=DB_NAME,
             user=DB_USER,
@@ -80,12 +76,7 @@ def register():
         finally:
             conn.close()
     else:
-         return redirect('/loginpage')
-        
-
-
-
-
+         return redirect('/loginpage')     
 
 @app.route("/loginpage")
 def loginpage():
@@ -115,17 +106,10 @@ def login():
     else:
         return redirect('/')
 
-
-
 @app.route('/profile')
 def profile():
-    # if 'username' in session:
-    #     return f'<h1>Welcome, {session["username"]}!</h1>'
-    # else:
-    #     return redirect('/')
-    return render_template('welcome.html')
-    
-    
+        return render_template('welcome.html')
+       
 @app.route('/protected')
 def protected():
     token = request.headers.get('Authorization')
