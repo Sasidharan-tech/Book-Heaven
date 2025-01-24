@@ -11,7 +11,7 @@ app.secret_key = 'my_secret_key'
 DB_NAME = "postgres"
 DB_USER = "postgres" 
 DB_HOST= 'localhost'
-DB_PASSWORD = "sasi"
+DB_PASSWORD = "1234"
 PORT = 5432
 
 def create_users_table():
