@@ -4,22 +4,70 @@
 <title>Book page</title>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='wel_style.css')}}">
-<!--[if IE 6]><link rel="stylesheet" type="text/css" href="styles/ie6.css"><![endif]-->
+<link href="{{url_for('static' , filename='img/favicon.png')}}" rel="icon">
 <style>
-  /* CSS to fix the size of the image */
-  .fixed-size-image {
-    width: 200px; /* Adjust as needed */
-  height: auto; 
-  }
+  body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 190vh; /* Ensure full window height */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    animation: slideshow 25s infinite; /* Slideshow animation */
+}
+
+@keyframes slideshow {
+    0% {
+        background-image: url("{{ url_for('static', filename='img/book_backgrond_imgs/book1.avif') }}");
+    }
+    20% {
+        background-image: url("{{ url_for('static', filename='img/book_backgrond_imgs/book2.jpg') }}");
+    }
+    40% {
+        background-image: url("{{ url_for('static', filename='img/book_backgrond_imgs/book3.jpg') }}");
+    }
+    60% {
+        background-image: url("{{ url_for('static', filename='img/book_backgrond_imgs/book4.jpg') }}");
+    }
+    80% {
+        background-image: url("{{ url_for('static', filename='img/book_backgrond_imgs/book5.avif') }}");
+    }
+    100% {
+        background-image: url("{{ url_for('static', filename='img/book_backgrond_imgs/book6.jpg') }}");
+    }
+}
+
+      button{
+      padding: 9px 10px; 
+      border-radius: 40px;
+      cursor: pointer;
+      border: 0px;
+      background-color: rgba(13, 148, 197, 0.929);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 10px;
+
+    }
+
+    button:hover{
+      letter-spacing: 3px;
+      background-color: red;
+    }
+     
+  
 </style>
 </head>
 <body>
+  
 <div id="header">
   
 <div id="content">
   <div> <span class="background"></span>
     <div class="section">
-    
+      <h1>Welcome, {{ username }}!</h1>
+      
+      <a href="/logout" style="color: aqua;"><button>Logout</button></a>
       <div>
         <ul class="accessories">
           <li class="first"> 
@@ -27,8 +75,8 @@
               <img class="fixed-size-image" src="{{ url_for('static', filename='img/python_basics1.png') }}" alt="">
             </a>
             <div> 
-              <a href="https://static.realpython.com/python-basics-sample-chapters.pdf">View</a> 
-              <a href="https://download1532.mediafire.com/v4rwkf56ghlgOMqbkaNSWrZ9L2x0GHeUbk6jgmakFNwiOC4fkHhpQWFLfVAih4XO5IQA57qr6eeU-vpX_0VmuQ0cyratiER5dCLuN7GxXKw5MK_ka-on0TIMprDDPfSe2m1lTbyZMsArUMfn-UFyVisBz1XIKyQqFBvMCvnp8QPKrA/hyg09tfytwvd5ak/python-basics-sample-chapters.pdf">Download</a> 
+              <a href="https://drive.google.com/file/d/1arhntbyetBcnrc7Ppq1E_I8RtpmGzC7r/view?usp=drive_link">View</a> 
+              <a href="https://download1532.mediafire.com/fy58hgjvd26g5QrgNeV0NJjG_H-7d5_9dis3Q3AeX-x4OeS27_vBwvrze6gvcEHGSLJKxnwpt8BO6RUdKp38M81-SbPFxfUbC0QoS6O2kddVkn8CcO0zwl28nPWE7XU00ah0GtC0eYdcrY5KU8IQUCsNC5Sl0q_1ZxVMT5Ez69ro67g/hyg09tfytwvd5ak/python-basics-sample-chapters.pdf">Download</a> 
             </div>
           </li>
           
@@ -37,44 +85,49 @@
               <img class="fixed-size-image" src="{{ url_for('static', filename='img/python1.png') }}" alt="book">
             </a>
             <div> 
-              <a href="#">View</a> 
-              <a href="https://download1592.mediafire.com/6tz3rp8lpxfgm1S6CFMVh2a9ev0obxAZQHCgvwTQ8_FV6-sMoiboNtITYkmJDW8ZarquniaIpY8M9ODUWKvTnvhZ2JZ_ymqEgb11afr6tBd8Up8JOd_fWuc1bmA3M4iU1HuRIh2h-e3YVqLVsNGBDR3WFvkRpE6sfFgl4JKcRcYJRmE/ddwlh1auvbb2s32/Core+Python+Programming%2C+Second+Edition+%282006%29+%283%29.pdf">Download</a> 
+              <a href="https://drive.google.com/file/d/15_-oMHUidXc9JHQO5fg41-iAbgAr3pQP/view?usp=drive_link">View</a> 
+              <a href="https://download1592.mediafire.com/hk1mjame42pgu8ZVEV5pEYSU2Bc_0UtFgMsfF8yhk2nC8mfEItkMKK6epS2K6U07leq1x8PTuTaKR5HTGn7D_Bw8P3lKDlewwCKvq3XfGmLHAVR318-0NIrp5REdt-Pt6nptjytbcIXLI6WVGtTQmbrDpxlJ6kMOsq3ciLyMMffams8/ddwlh1auvbb2s32/Core+Python+Programming%2C+Second+Edition+%282006%29+%283%29.pdf">Download</a> 
             </div>
           </li>
           
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image3.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/cn.png') }}" alt="cn book"></a>
+            <div> 
+            <a href="https://drive.google.com/file/d/1ZexhQbnfmdKbUTApg1GQ3Z0LnayQyXX3/view?usp=drive_link">View</a> 
+            <a href="https://download1588.mediafire.com/zuka6evkq38gyvY-417-As_iflq4pfDlDQs9uiyro1o7V_qHgwtE0A2f25YrQXuG0Dq-sLzyGL38lyccTww4Pvc9CgW0O5AIYCvB5ZHduAMIQdvfJgEtyB9r2Pi6s2LboT9m-LuHPNXTu_B12LwV1emhp_Irl0kac_KXHvQgiWPnnto/bfypfse1d46z8m1/2+yr+CN.pdf">Download</a> </div>
           </li>
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image4.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
-          </li>
-        </ul>
-        <ul class="accessories">
-          <li class="first"> <a href="#" class="thumbnail"><img src="images/accessory-image5.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
-          </li>
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image6.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
-          </li>
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image7.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
-          </li>
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image8.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
+
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/os.png') }}" alt=""></a>
+            <div> <a href="https://drive.google.com/file/d/1f7bfCZFVu0y5EtehG9-zOErgG4f9aT77/view?usp=drive_link">View</a>
+             <a href="https://download1590.mediafire.com/pf9rvpranp0gEGqRz7yrMgh5Y4F9dT8hdichnQTpc1alFIZbThXTs0CQ7kKfpqnW0CJ_iFbkZjNbJ5yjV9FDgrimvr0AhhxwVrIQS2aavKaxWUWH8dKF9a0vf69v8IqVivo8cM7mCCZFhKXXURaDGFeAX5g2H7rzfVt5QjKmSTW4D2s/qjjksfuzw1qsbep/OPERATING+SYSTEM.pdf">Download</a> </div>
           </li>
         </ul>
         <ul class="accessories">
-          <li class="first"> <a href="#" class="thumbnail"><img src="images/accessory-image9.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
+          <li class="first"> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/web.jpg') }}" alt=""></a>
+            <div> <a href="https://drive.google.com/file/d/19k1sQ1pBuF8lmGobb1NIuJO111ElnQSp/view?usp=drive_link">View</a> <a href="https://download1509.mediafire.com/4wx4lzdcg5mgPDaENFsn2BskLlLdI-egvm2DdPoYtZ7Q9PVozS372l6Pg2_vyGOs25dhD2Lc6QgHmaP6p3TToO592SOlYYstFCgrPcc-jlYIFO31WEmxU-P3QL4ru6j8YdayhD9neZtjNiyfcH2LvQHTvVcHn57XSVIsyzkLyv3Ttn8/wcobu1htez5mt84/WEB+TECHNOLOGY.pdf">Download</a> </div>
           </li>
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image10.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
+
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/datas.jpg') }}" alt=""></a>
+            <div> <a href="https://drive.google.com/file/d/1VgRpXBxyyKMHrvnlebwrBOmm_FXDShFo/view?usp=drive_link">View</a> <a href="https://download1530.mediafire.com/dv8nmrremmzgih0764B9lCFd_adcnOLm4csP_0Lq4nOJqmE1ZhkI9iie7qtDv-ctQhORKAN2dt6Qs_5zDoPiZByO5zAvDoZB5HG2ipBmCUkbiyiQ50TnGU-NaTAqjvUbTGJeHgnrfBgtOTFvw3PQpmzK5bHwzNTGiioGkNBO1AmmODo/1bpkz0uatlj1pzn/Data+Structures+Notes+2+-+TutorialsDuniya.pdf">Download</a> </div>
           </li>
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image11.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/linux.jpg') }}" alt=""></a>
+            <div> <a href="https://drive.google.com/file/d/1A4d-Vddol3FbGKfpoAiDimCywtYRGIUA/view?usp=drive_link">View</a> <a href="https://download1478.mediafire.com/dmot7iey4nugq_r6Wf7H7XK3hymdi-Wztwz4b6OnJpJOJfOiTDxmnKrsoJIymQ7hsG7A_DHLS0VSreJf1R3HYOwetKsPTL8MdoSmlSxcPwIMe7uDFzUCCgL4ySSpS8Pz4agnfOVpbO0lYHlTKetn-KNAHEGGOABFspt-bNNH3EkCJNU/ifl1ji6hkkaog3n/LINUX+AND+SHELL+PROGRAMMING.pdf">Download</a> </div>
           </li>
-          <li> <a href="#" class="thumbnail"><img src="images/accessory-image12.jpg" alt=""></a>
-            <div> <a href="#">View</a> <a href="#">Download</a> </div>
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/rdbms.jpg') }}" alt="rdbms_book"></a>
+            <div> <a href="https://drive.google.com/file/d/1Rx2YDi_ytOUvs83IgmQJaLUdEFr5NDzw/view?usp=drive_link">View</a> <a href="https://download1324.mediafire.com/we3c2yirraqgHIEdUCuCz3rZnHVfFnAAFSRnfcCdj4QElj5B2Gjya0_X9xE4FphbZ1_a3vrMzUwthfwxUVUDe6mYnhkyRZSnA17llX4fkvrNEontTJV_J7oOUR238R8zhTWQ5IQmryWyuobsl1mTuHuRi5jAAJ4rkN3zRhjdPyHTs6w/hmhe2cswjw90oz7/rdbms.pdf">Download</a> </div>
+          </li>
+        </ul>
+        <ul class="accessories">
+          <li class="first"> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/java.jpg') }}" alt=""></a>
+            <div> <a href="https://drive.google.com/file/d/1BZ4HmNTuNhtBc6RyhJ9FB7jWjUJFL0ES/view?usp=drive_link">View</a> <a href="https://download1590.mediafire.com/juyxmlg2a5vgIlTcZLWNAsl7AjAsHGPjl5YiEWgk2nJa7uXru-qDDhRRQCGafOdzVRhFjhr6RhIeX5QnBjqyG0BG0oJio9ReQUfGqhdLfKEqCDDNSu9HeoDxQ-V11gwycqB8xznSIKtLPSDnjWGr514FJTFwP8TooxKCsj8yB6HYznQ/elr0knqfa1ohws4/java.pdf">Download</a> </div>
+          </li>
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/se.jpg') }}" alt="se book"></a>
+            <div> <a href="https://drive.google.com/file/d/1mwC1gxucpAJKpZEycyxW_wGdBmIZSG9Y/view?usp=drive_link">View</a> <a href="https://download1324.mediafire.com/o17bw4mazkpgwU0x_O6MQ-JLvx9JgFE5OZNRDqoiywDiwu12aOeWChfH1FGldqcF-8jDGoVIy3fDihzCUnfn-gn9KocdkB6OqouXNGLvJK21OF_AuSwGVAldpzQ76Q3Pi1A72wPTK5T5jph4L9CEPETXHlwR8nLNTXW0GwmVuFg9/o4ngc2ffkzkly6q/se.pdf">Download</a> </div>
+          </li>
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/mc.jpg') }}" alt="mc book"></a>
+            <div> <a href="https://drive.google.com/file/d/1ZUXx9sJRoXFy_Ih8g2M45ex24Rk8CID4/view?usp=drive_link">View</a> <a href="https://download1527.mediafire.com/7be12f19ngvgAzO93534BfptUDns_jAm8-GjsQGgaBxrZNQQLlK2odfwbBw9k4iTCGec2_uhl7ZEumPrPNMV3ERjGE93Gmj4g3kKD1KZVEtgH2Sm11_e_XII2Bf8BIPebiECaqfwrvE4h4dkOs2-ZIdwHZx9vHjYF0VIoCU48x7U/yjuxppwzkd5wnid/mc.pdf">Download</a> </div>
+          </li>
+          <li> <a href="#" class="thumbnail"><img src="{{ url_for('static', filename='img/coa.jpg') }}" alt="coa Book"></a>
+            <div> <a href="https://drive.google.com/file/d/1oDSb0oDzDIgBjadeNqZ5Q65NRAm-zoYO/view?usp=drive_link">View</a> <a href="https://download854.mediafire.com/knfy3a41ibzgMPuyEIWAMfMeXC-MFtumjaKt_bKNpH8GvBNXPy5LPevWXpFfe_GrpkrIJFpcIW1gzWEFX901Z83V_m5fvLjXg8g5HAxZIoQ0ty9JgkEpZ0i_EX1U9iXK-kS75Y2B_BW9ZtJqm6YL0Pk_9FBn1lefcpPSmQg6mzyC/c1rwjkurz8iz4sp/coa.pdf">Download</a> </div>
           </li>
         </ul>
         <div id="paging"> <a href="#" class="prev">Prev</a> <a href="#" class="next current">Next</a> </div>
@@ -82,6 +135,16 @@
     </div>
   </div>
 </div>
-
+  <div class="container">
+    <div class="user-profile">
+      <a href=""><button >User Profile</button></a>
+       <br>
+    </div>
+    <div class="home">
+      <br>
+      <a href="/"><button >Go to home</button></a>
+    </div>
+</div>
+</div>
 </body>
 </html>

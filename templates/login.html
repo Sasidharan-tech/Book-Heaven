@@ -4,29 +4,63 @@
 	<link rel="stylesheet" href="{{url_for('static' , filename='styles.css')}}">
 	
 	<title>Login</title>
+	<link href="{{url_for('static' , filename='img/favicon.png')}}" rel="icon">
+	<style>
+		button{
+			cursor: pointer;
+		}
+		button:hover{
+      letter-spacing: 3px;
+      background-color: red;
+    }
+	
+	</style>
    
     
 </head>
 <body>
+	
 	<div class="container" id="container">
 		<div class="form-container log-in-container">
-			
-            <form method="POST" action="/login">
+	        <form method="POST" action="/login" onsubmit="return validateForm()">
+				<br><br><br>
                 <h2>Login</h2>
                 <input type="text" id="username" name="username" placeholder="Username">
                 <input type="password" id="password" name="password" placeholder="Password">
-                <button type="submit">Login</button>
-                <a href="registerpage">register</a>
+				
+				<button type="submit">Login</button>
+				<br><br>
+			         <a href="/">Go to home page</a>   
             </form>
+			
 		</div>
+		
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-right">
 					<h1>Login Form</h1>
-					
+					<a href="registerpage" target="_blank" style="color: black;"><p>Don't have an account yet? <p style="color: rgb(85, 9, 238);"> Sign Up</p></p></a>
 				</div>
 			</div>
 		</div>
+		
 	</div>
+	
+	<script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Username or password is empty.");
+                return false; 
+            }
+
+            return true;
+        }
+
+	
+    </script>
+	
 </body>
 </html>

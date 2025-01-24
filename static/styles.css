@@ -21,14 +21,12 @@ h1 {
 }
 
 p {
-	justify-content: center;
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-	padding: 20px 40px;
-	text-align: auto;
+	
+	
 }
 
 span {
@@ -39,14 +37,14 @@ a {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
-	margin: 15px 0;
+	margin: 1px 0;
 }
 
 button {
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
-	color: #FFFFFF;
+	color: #fdfafa;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -56,18 +54,19 @@ button {
 }
 
 form {
-	background-color: #FFFFFF;
+	background-color: #fdfbfb;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 50px 50px;
 	height: 100%;
+	
 	text-align: center;
 }
 
 input {
-	background-color: #eee;
+	background-color: #f5f1f1;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
@@ -75,7 +74,7 @@ input {
 }
 
 .container {
-	background-color: #fff;
+	background-color: #fcfafa;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
@@ -83,6 +82,7 @@ input {
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
+	
 }
 
 .form-container {
@@ -96,32 +96,32 @@ input {
 	width: 50%;
 	z-index: 2;
 }
+ 
 
-
-.overlay-container {
+ .overlay-container {
 	position: absolute;
 	top: 0;
 	left: 50%;
 	width: 50%;
 	height: 100%;
-}
+} 
 
-
+ 
 .overlay {
-	background: #cf0434;
+	background: #faf9f9;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
 	background: linear-gradient(to right, #FF4B2B, #FF416C);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
-	color: #FFFFFF;
+	color: #e5d9d9;
 	position: relative;
 	left: -100%;
 	height: 100%;
 	width: 200%;
 }
 
-.overlay-panel {
+ .overlay-panel {
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -137,15 +137,15 @@ input {
 
 .overlay-right {
 	right: 0;
-}
+} 
 
-
+ 
 .social-container {
 	margin: 50px 0;
 }
 
 .social-container a {
-	border: 1px solid #DDDDDD;
+	border: 1px solid #f7f1f1;
 	border-radius: 50%;
 	display: inline-flex;
 	justify-content: center;
@@ -153,4 +153,4 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
-}
+} 

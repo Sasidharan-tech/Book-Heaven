@@ -1,220 +1,59 @@
-
-:root {
-  --white-color:                  #ffffff;
-  --primary-color:                #E76F51;
-  --secondary-color:              #E9C46A;
-  --section-bg-color:             #f0f8ff;
-  --custom-btn-bg-color:          #F4A261;
-  --custom-btn-bg-hover-color:    #E76F51;
-  --dark-color:                   #000000;
-  --p-color:                      #717275;
-  --link-hover-color:             #E76F51;
-
-  --body-font-family:             'Unbounded', sans-serif;
-
-  --h1-font-size:                 42px;
-  --h2-font-size:                 36px;
-  --h3-font-size:                 28px;
-  --h4-font-size:                 24px;
-  --h5-font-size:                 22px;
-  --h6-font-size:                 20px;
-  --p-font-size:                  16px;
-  --menu-font-size:               12px;
-  --btn-font-size:                14px;
-  --copyright-font-size:          14px;
-
-  --border-radius-large:          100px;
-  --border-radius-medium:         20px;
-  --border-radius-small:          10px;
-
-  --font-weight-light:            300;
-  --font-weight-normal:           400;
-  --font-weight-semibold:         600;
-  --font-weight-bold:             700;
-}
-
+/* Your CSS code goes here */
 body {
   background-color: lightblue;
-  font-family: var(--body-font-family); 
-}
-
-
-/*---------------------------------------
-  TYPOGRAPHY               
------------------------------------------*/
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--dark-color);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--font-weight-semibold);
+  font-family: 'Unbounded', sans-serif; 
 }
 
 h1 {
-  font-size: var(--h1-font-size);
-  font-weight: var(--font-weight-bold);
+  font-size: 42px;
 }
-
-h2 {
-  font-size: var(--h2-font-size);
-  font-weight: var(--font-weight-bold);
-}
-
-h3 {
-  font-size: var(--h3-font-size);
-}
-
-h4 {
-  font-size: var(--h4-font-size);
-}
-
-h5 {
-  font-size: var(--h5-font-size);
-}
-
-h6 {
-  color: var(--secondary-color);
-  font-size: var(--h6-font-size);
-}
-
-p {
-  color: var(--p-color);
-  font-size: var(--p-font-size);
-  font-weight: var(--font-weight-normal);
-}
-
-ul li {
-  color: var(--p-color);
-  font-size: var(--p-font-size);
-  font-weight: var(--font-weight-normal);
-}
-
-a, 
-button {
-  touch-action: manipulation;
-  transition: all 0.3s;
-}
-
-a {
-  display: inline-block;
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--link-hover-color);
-}
-
-b,
-strong {
-  font-weight: var(--font-weight-bold);
-}
-
-
-/*---------------------------------------
-  SECTION               
------------------------------------------*/
-.section-padding {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-::selection {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-}
-
-
-/*---------------------------------------
-  NAVIGATION              
------------------------------------------*/
-
 
 .navbar {
   background: transparent;
-  z-index: 99;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 
-.navbar-brand,
-.navbar-brand:hover {
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-weight-bold);
-  display: block;
-  color: var(--white-color);
-}
-
-.navbar-expand-lg .navbar-nav .nav-link {
-  border-radius: var(--border-radius-large);
-  margin: 10px;
-  padding: 10px;
+.navbar h2 {
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .navbar-nav .nav-link {
-  display: inline-block;
-  color: var(--white-color);
-  font-size: var(--menu-font-size);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.5px;
-  position: relative;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  color: #0e0f0f95;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.navbar-nav .nav-link.active, 
 .navbar-nav .nav-link:hover {
-  color: var(--primary-color);
+  color: #E76F51;
 }
 
-
-
-
-/*---------------------------------------
-  HERO        
------------------------------------------*/
- .hero-section {
+.hero-section {
   background-image: url('../images/businessman-sitting-by-table-cafe.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
   padding-top: 50px;
 }
 
-.hero-section::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.45);
+.hero-section .container {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-.hero-section .row {
-  position: relative;
-  z-index: 22;
-  top: 100px;
+.hero-section p {
+  color: #1345d9;
+  font-size: 16px;
+}
+
+.hero-image-wrap {
+  margin-top: 30px;
 }
 
 .hero-image {
-  position: relative;
-  z-index: 2;
-  bottom: 100px;
   display: block;
   margin: auto;
+  max-width: 100%;
 }
 
 @media screen and (min-width: 991px) {
@@ -223,5 +62,3 @@ strong {
     padding-top: 350px;
   }
 }
-
-

@@ -1,5 +1,3 @@
-/* wel_style.css */
-
 /* Resetting default margin and padding */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
@@ -17,7 +15,7 @@ body {
 
 /* Styling for the header */
 #header {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8);
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -50,7 +48,16 @@ body {
     height: auto;
     border: 1px solid #ccc;
     padding: 3px;
+    border-radius: 15px;
+    scale: 0.7;
+    rotate: 0deg;
+    transition: all 0.7s;
 }
+.thumbnail img:hover{
+    scale: 1;
+    rotate: 360deg;
+}
+
 
 /* Styling for the view and download links */
 .accessories li div {
